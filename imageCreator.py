@@ -2,13 +2,15 @@ import PIL.Image
 from glitch_this import ImageGlitcher
 import random
 
-
 def imageCreator(path):
     try:
-        image=PIL.Image.open(path)
+        # Abrimos la imagen utilizando la biblioteca PIL
+        image = PIL.Image.open(path)
     except:
-        print("ruta no valida")
+        print("Ruta no válida")
         return
+
+    # Imprimimos el ancho y alto de la imagen
     print(image.size[0])
     print(image.size[1])
 

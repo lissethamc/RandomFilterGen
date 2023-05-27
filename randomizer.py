@@ -8,7 +8,7 @@ def apply_glitch(path):
         image = PIL.Image.open(path)
     except:
         print("Ruta no válida")
-        return
+        return img
 
     # Aplicamos el filtro de ruido a la imagen
     img = noise(image)
@@ -45,4 +45,4 @@ def glitch(img):
     glitchImage = glitcher.glitch_image(
         img, random.uniform(0.1, 10.0), color_offset=colorOffsetVal
     )
-    return img
+    return glitchImage

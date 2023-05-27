@@ -29,7 +29,7 @@ def upload():
         glitched_image = apply_glitch('static/uploads/' + filename)
         
         # Generamos un nombre para la imagen glitcheada
-        glitched_filename = 'glitched_' + filename
+        glitched_filename = generate_filename()
         # Guardamos la imagen glitcheada en la carpeta 'uploads' con el nuevo nombre
         glitched_image.save('static/generated_images/' + glitched_filename)
         # Renderizamos la plantilla 'index.html' y pasamos el nombre de la imagen glitcheada como variable

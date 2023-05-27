@@ -46,3 +46,7 @@ def glitch(img):
         img, random.uniform(0.1, 10.0), color_offset=colorOffsetVal
     )
     return glitchImage
+
+def generate_filename():
+    # Generamos un nombre único para la imagen
+    return f"glitch_{random.randint(1000, 9999)}.jpg"

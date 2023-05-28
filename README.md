@@ -17,3 +17,20 @@ Después de hacer `docker build .` podemos ver en las imágenes nuestra imagen c
 
 Podemos correr el contenedor para asegurarnos de que está bien configurada la imagen con el comando `docker run -p 80:80 <NOMBREIMAGEN:TAG>`, la bandera -p seguida de 80:80 nos ayuda a bindear los puertos del contenedor.
 
+Ya contábamos con un registry en DigitalOcean por lo que a continuación, por lo que necesitábamos renombrarla para que apunte a nuestro registro de imágenes en DigitalOcean, utilizando
+```shell
+docker tag <NOMBRE DE LA IMAGEN LOCAL> registry.digitalocean.com/<NOMBRE DEL REGISTRO>/<NOMBRE DE LA IMAGEN EN D.O.>
+```
+Es necesario autenticarse en el registro de imágenes con `doctl registry login`
+
+Una vez hecho eso, subimos la imagen con
+```shell
+docker push registry.digitalocean.com/<NOMBRE DEL REGISTRO>/<NOMBRE DE LA IMAGEN EN D.O.>
+```
+Utilizamos el comando para obtener los manifiestos de las imágenes almacenadas. Estos manifiestos contienen información sobre las imágenes y sus configuraciones relacionadas.
+```shell
+  doctl registry kubernetes-manifest | kubectl apply -f -
+```
+Cada manifiesto contiene información acerda del deploy por kubernetes
+
+

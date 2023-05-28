@@ -33,4 +33,32 @@ Utilizamos el comando para obtener los manifiestos de las imágenes almacenadas.
 ```
 Cada manifiesto contiene información acerda del deploy por kubernetes
 
+Creamos el deploy desde `kubectl` desde la imagen a la que le hicimos `push`
+
+```shell
+kubectl create deployment flask-app-filter --image=registry.digitalocean.com/<REGISTRO>/<NOMBRE IMAGEN>
+```
+Verificamos que tengramos un solo pod creado con `kubectl get pods`
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/c787fae3-69f3-4c2a-9f6b-d745f18eedf2)
+
+Para poder aplicar un balanceador de cargas creamos 4 replicas con el siguiente comando
+
+```shell
+kubectl scale deployment/flask-app-filter --replicas=4
+```
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/3e77c767-db7e-4e34-b0f9-9690c41957c3
+
+Y configuramos el balanceador de cargas con el siguiente comando
+
+```shell
+kubectl expose deployment flask-app-filter --type=LoadBalancer --port=80 --target-port=80
+```
+Debemos esperar un rato a que termine de configurar las IPs, pero después podemos ver la lista de balanceadores de cargas
+```shell
+doctl compute load-balancer list --format Name,Created,IP,Status
+```
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/c50f8dca-fb76-466d-880a-68d28e8ce7f4)
+
+Podemos ver la información de los servicios, siendo el balanceador de cargas uno de ellos con `kubectl get services`
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/aac75554-c8ed-4b1a-8bfa-9f832a8ea149)
 

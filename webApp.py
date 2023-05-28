@@ -39,5 +39,5 @@ def upload():
 
 
 if __name__ == '__main__':
-    # Ejecutamos la aplicación Flask en el host 0.0.0.0 y el puerto 5000
-    app.run(host='0.0.0.0', port=5000)
+    # Ejecutamos la aplicación Flask en el host 0.0.0.0 y el puerto 5000 localhost,80 contenedores
+    app.run(host='0.0.0.0', port=80)

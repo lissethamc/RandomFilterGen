@@ -11,3 +11,7 @@ RandomFilterGen es un sistema basado en arte generativo que emplea algoritmos y 
 
 Para su administración se hace uso de Kubectl, Doctl e Istioctl.
 Es necesario hacer un contenedor donde se incluya la aplicación desarrollada, esto a partir de un Dockerfile, también es necesario indicar en un archivo `requirements.txt` las librerías que funcionan como requisitos, que son `PIL`, `Flask` `glitch_this`.
+
+Después de hacer `docker build .` podemos ver en las imágenes nuestra imagen creada con `docker images`
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/5d28d23b-b0a8-4577-a1fa-735c736d5b29)
+

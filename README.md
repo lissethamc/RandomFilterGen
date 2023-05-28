@@ -6,3 +6,8 @@ RandomFilterGen es un sistema basado en arte generativo que emplea algoritmos y 
 
 ## Sitio hasta el momento:
 ![imagen](https://github.com/lissethamc/RandomFilterGen/assets/101375005/2bf948b8-f999-449f-8284-f2b78676accc)
+
+## Implementación en DigitalOcean
+
+Para su administración se hace uso de Kubectl, Doctl e Istioctl.
+Es necesario hacer un contenedor donde se incluya la aplicación desarrollada, esto a partir de un Dockerfile

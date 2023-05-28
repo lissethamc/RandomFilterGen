@@ -15,3 +15,5 @@ Es necesario hacer un contenedor donde se incluya la aplicación desarrollada, e
 Después de hacer `docker build .` podemos ver en las imágenes nuestra imagen creada con `docker images`
 ![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/5d28d23b-b0a8-4577-a1fa-735c736d5b29)
 
+Podemos correr el contenedor para asegurarnos de que está bien configurada la imagen con el comando `docker run -p 80:80 <NOMBREIMAGEN:TAG>`, la bandera -p seguida de 80:80 nos ayuda a bindear los puertos del contenedor.
+

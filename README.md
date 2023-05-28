@@ -62,3 +62,12 @@ doctl compute load-balancer list --format Name,Created,IP,Status
 Podemos ver la información de los servicios, siendo el balanceador de cargas uno de ellos con `kubectl get services`
 ![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/aac75554-c8ed-4b1a-8bfa-9f832a8ea149)
 
+Para el monitoreo de la ServiceMesh se usa kiali, podemos entrar a ella con istio
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/f0c789f6-8963-4f13-9885-aa304a059326), nos pedirá un token que obtenemos con el comando
+```shell
+kubectl exec $(kubectl get pod -n istio-system -l app=kiali -o jsonpath='{.items[0].metadata.name}') -n istio-system -- cat /var/run/secrets/kubernetes.io/serviceaccount/token
+```
+
+Donde podemos ver el tráfico
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/d029c9f2-2357-4141-826f-ecceb941ec86)
+

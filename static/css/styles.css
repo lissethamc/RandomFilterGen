@@ -14,12 +14,8 @@ body {
     color: rgb(218, 218, 218);
 }
 
-h1 {
-    margin-top: 5%;
-}
-
-h3 {
-    margin-bottom: 5%;
+#logo {
+  margin: 30px;
 }
 
 label {
@@ -28,7 +24,7 @@ label {
 }
 
 .upload-form {
-    border: 5px solid #00536e;
+    border: 5px dotted #00536e;
     border-radius: 5px;
     height: 200px;
     width: 300px;
@@ -49,16 +45,20 @@ label {
   }
   
 .submit-btn {
-    background-color: #007e9d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
-    font-family: 'Ubuntu', sans-serif;
-    border-radius: 5px;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+
+    margin-left: 375px;
+
+}
+
+#continue {
+  width: 50px;
+  height: 50px;
+
+  margin-bottom: -100px;
 }
 
 .custom-file-label {
@@ -85,6 +85,11 @@ label {
     padding: 20px;
   }
 
+  #loadedImg {
+    height: 300px;
+    width: 400px;
+  } 
+
   #image-preview {
     border: 5px solid #00536e;
     border-radius: 5px;
@@ -93,6 +98,8 @@ label {
     font-weight: bold;
     height: 300px;
     width: 400px;
+
+    margin-left: 70px;
   }
 
   #image-preview img {
@@ -110,13 +117,50 @@ label {
 }
 
 .info {
-    text-align: left;
-    padding: 10%;
+  text-align: left;
+  padding: 5%;
+  background-image: url("/static/bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-clip: padding-box;
+  transform: skewY(-355deg);
 }
 
-footer p {
-    font-weight: bold;
+.info img {
+  height: 210px;
+  width: 310px;
 }
+
+article {
+  display: flex;
+  align-items: center;
+  margin: 50px;
+  transform: skewY(355deg);
+}
+
+article img {
+  flex: 0 0 auto;
+  width: 200px; 
+  margin-right: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+article p {
+  flex: 1 1 auto;
+  text-shadow: 6px 6px 10px rgb(0, 0, 0); 
+}
+
+
+footer {
+    font-weight: bold;
+    background-color:#00536E;
+    margin-top: 10%;
+    padding: 30px;
+    list-style-type: none;
+    text-shadow: 6px 6px 10px rgb(0, 0, 0); 
+}
+
 
 @keyframes fadeIn {
     from {
@@ -150,3 +194,110 @@ footer p {
     display: none;
     animation-name: fadeOut;
   }
+
+
+  .hidden {
+    display: none;
+}
+
+  .spinner {
+    border: 16px solid #f3f3f3; /* Color de fondo del spinner */
+    border-top: 16px solid #3498db; /* Color del spinner */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    margin-top: 100px; /* Ajusta el margen superior según sea necesario */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  border:4px solid #0000;
+  border-radius: 50%;
+  border-color:#FFFFFF #0000;
+  animation: s6 1s infinite linear;
+
+  margin-top: 130px;
+  margin-right: 170px;
+  margin-bottom: 263px;
+  margin-left: 170px;
+}
+.spinner::before,
+.spinner::after {    
+  content:"";
+  grid-area: 1/1;
+  margin:2px;
+  border:inherit;
+  border-radius: 50%;
+}
+.spinner::before {
+  border-color:#00536E #0000;
+  animation:inherit; 
+  animation-duration: .5s;
+  animation-direction: reverse;
+}
+.spinner::after {
+  margin:8px;
+}
+
+@keyframes s6 { 
+  100%{transform: rotate(1turn)}
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+/* #scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: none;
+  border: none;
+  
+  cursor: pointer;
+  opacity: 0.7;
+  z-index: 9999;
+  transition: opacity 0.3s;
+  transform: rotate(270deg);
+}
+
+#scrollToTopBtn:hover {
+  opacity: 1;
+} */
+
+#btn-regresar {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  z-index: 9999;
+  transition: opacity 0.3s;
+  transform: rotate(270deg);
+  visibility: hidden;
+}
+
+#btn-regresar.mostrar {
+  visibility: visible;
+}
+
+#btn-regresar:hover {
+  opacity: 1;
+}
+
+

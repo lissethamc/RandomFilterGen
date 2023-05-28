@@ -7,46 +7,67 @@
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </head>
 <body>
-    <h1>Generative Art App</h1>
-    <h3>RandomFilterGen Project</h3>
+    <img id = "logo" src="static/logo.png" alt="logo.png">
 
     <div class="container">
         <!-- Formulario para subir la imagen y guardar en la carpeta "uploads", la función está en la "webApp de Flask" -->
-        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+        <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form" onsubmit="showSpinner()">
+            <button type="submit" class="submit-btn">
+                <img id="continue" src="/static/continue.png" alt=">>">
+            </button>
             <div class="button-container">
-              <label for="image" class="custom-file-label">
-                Seleccionar archivo <br><br>
-                <img id="loadImg" src="static/loadImg.png" alt="loadImg">
-              </label>
-              <input type="file" id="image" name="image" accept="image/*" class="file-input" onchange="showFileName()">
+                <label for="image" class="custom-file-label">
+                    Seleccionar archivo <br><br>
+                    <img id="loadImg" src="static/loadImg.png" alt="loadImg">
+                </label>
+                <input type="file" id="image" name="image" accept="image/*" class="file-input" onchange="showFileName()">
             </div>
-            <input type="submit" value="Aplicar filtro" class="submit-btn">
-          </form>
-          
-          <div id="image-preview">
+            
+        </form>
+    
+        <div id="image-preview">
+            <!-- Aquí se muestra el spinner -->
+            <div id="spinner" class="spinner hidden"></div>
+    
             <!-- Aquí se muestra la imagen -->
             {% if filename %}
-              <img src="{{ url_for('static', filename='generated_images/' + filename) }}" alt="Error, no image..." id="preview-image" class="animated show">
+                <img src="{{ url_for('static', filename='generated_images/' + filename) }}" alt="Error, no image..." id="preview-image" class="animated show">
             {% endif %}
-          </div>
-          
+        </div>
     </div>
 
-    <div class="info">
-        <p>El arte generativo es una forma de expresión artística en la que se 
-            utilizan sistemas o algoritmos computacionales para generar obras de arte. 
-            En lugar de ser creadas directamente por un artista humano, estas obras se 
-            generan a través de procesos automáticos o semi-automáticos, donde se establecen 
-            reglas, parámetros o algoritmos que determinan cómo se desarrolla la obra.
-            <br><br>
-            RandomFilterGen es un sistema basado en arte generativo que emplea algoritmos y 
-            parámetros aleatorios para aplicar filtros a las imágenes, generando resultados 
-            únicos en cada iteración. Esta herramienta te permite explorar la creatividad a 
-            través de la personalización de los parámetros y experimentar con una amplia variedad 
-            de filtros generativos. Descubre la belleza del arte en lo impredecible y transforma 
-            tus imágenes en obras de arte auténticas y sorprendentes.
-        </p>
-    </div>
+    <section class="info">
+        <article>
+            <img src="static/img1.png" alt="img1.png">
+            <p>El arte generativo es una forma de expresión artística en la que se 
+                utilizan sistemas o algoritmos computacionales para generar obras de arte. 
+                En lugar de ser creadas directamente por un artista humano, estas obras se 
+                generan a través de procesos automáticos o semi-automáticos, donde se establecen 
+                reglas, parámetros o algoritmos que determinan cómo se desarrolla la obra.
+            </p>
+        </article>
+
+        <article>
+            
+            <p style="text-align: left;">
+                El arte generativo es una forma de expresión artística en la que se 
+                utilizan sistemas o algoritmos computacionales para generar obras de arte. 
+                En lugar de ser creadas directamente por un artista humano, estas obras se 
+                generan a través de procesos automáticos o semi-automáticos, donde se establecen 
+                reglas, parámetros o algoritmos que determinan cómo se desarrolla la obra.
+            </p>
+            <img src="static/img2.png" alt="img2.png" style="float: right; margin-left: 20px;">
+        </article>
+
+        <article>
+            <img src="static/img3.png" alt="img3.png">
+            <p>Además de su valor estético, el arte generativo también ha generado interés en campos 
+                como la inteligencia artificial, la ciencia de la computación y la teoría de sistemas. 
+                Ha abierto nuevas perspectivas en la colaboración entre humanos y máquinas, y ha generado 
+                debates sobre la autoría, la creatividad y la originalidad en la era digital.
+            </p>
+        </article>      
+    </section>
 
     <footer>
         <p>Creado por:</p>
@@ -62,5 +83,36 @@
             </ul>
         </li>
     </footer>
+      
+    <button id="btn-regresar">
+        <img src="/static/continue.png" alt=">>" style = "width: 50px; height: 50px;">
+    </button>
+
+    <!-- Por alguna razon al poner el codigo en el archivo js no funciona el boton, dejemoslo aqui
+    ya funciona, no le mueva...
+    -->
+    <script>
+        // Función para regresar al inicio
+        function regresarInicio() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Para un desplazamiento suave, opcional
+            });
+            }
+
+            // Evento click del botón
+            var btnRegresar = document.getElementById('btn-regresar');
+            btnRegresar.addEventListener('click', regresarInicio);
+
+            // Mostrar u ocultar el botón según la posición de desplazamiento
+            window.addEventListener('scroll', function() {
+            if (window.scrollY > 0) {
+                btnRegresar.classList.add('mostrar');
+            } else {
+                btnRegresar.classList.remove('mostrar');
+            }
+        });
+    </script>
+
 </body>
 </html> 

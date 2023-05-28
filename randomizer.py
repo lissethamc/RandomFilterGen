@@ -2,19 +2,19 @@ import PIL.Image
 from glitch_this import ImageGlitcher
 import random
 
-def applyFilter(path):
+def apply_glitch(path):
     try:
         # Abrimos la imagen utilizando la biblioteca PIL
         image = PIL.Image.open(path)
     except:
         print("Ruta no válida")
-        return
+        return img
 
     # Aplicamos el filtro de ruido a la imagen
     img = noise(image)
-
     # Aplicamos el efecto de glitch a la imagen
     img = glitch(image)
+    return img
 
 def noise(img):
     # Generamos píxeles de ruido en la imagen
@@ -45,6 +45,8 @@ def glitch(img):
     glitchImage = glitcher.glitch_image(
         img, random.uniform(0.1, 10.0), color_offset=colorOffsetVal
     )
+    return glitchImage
 
-    # Guardamos la imagen glitcheada en un archivo
-    glitchImage.save("test_images/glitch.jpg")
+def generate_filename():
+    # Generamos un nombre único para la imagen
+    return f"glitch_{random.randint(1000, 9999)}.jpg"

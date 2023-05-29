@@ -1,0 +1,3 @@
+Pillow
+flask
+glitch_this

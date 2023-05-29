@@ -6,7 +6,7 @@ El arte generativo es una forma de expresión artística en la que se utilizan s
 
 RandomFilterGen es un sistema basado en arte generativo que emplea algoritmos y parámetros aleatorios para aplicar filtros a las imágenes, generando resultados únicos en cada iteración. Esta herramienta te permite explorar la creatividad a través de la personalización de los parámetros y experimentar con una amplia variedad de filtros generativos. Descubre la belleza del arte en lo impredecible y transforma tus imágenes en obras de arte auténticas y sorprendentes.
 
-## Sitio hasta el momento:
+## Sitio  web:
 ![imagen](https://github.com/lissethamc/RandomFilterGen/assets/101375005/2bf948b8-f999-449f-8284-f2b78676accc)
 
 ## Implementación en DigitalOcean

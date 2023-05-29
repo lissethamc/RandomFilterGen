@@ -71,3 +71,11 @@ kubectl exec $(kubectl get pod -n istio-system -l app=kiali -o jsonpath='{.items
 Donde podemos ver el tráfico
 ![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/d029c9f2-2357-4141-826f-ecceb941ec86)
 
+Podemos visualizar cómo los pods se reestablecen en `AGE` después de `kubectl delete pods -all`, así como podemos ver cómo se reestablecen al usar cheekymonkey
+
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/c7cdd092-6455-44e5-b524-05d43cdca50a)
+
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/3c807c57-7a79-4254-aba2-89a1b733eabe)
+
+![image](https://github.com/lissethamc/RandomFilterGen/assets/33168405/883de62b-2cad-41b9-994d-3501190cd02c)
+

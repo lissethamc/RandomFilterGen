@@ -1,8 +1,6 @@
 # [RandomFilterGen](randomfilterapp.sytes.net)
 
-#### Juan Manuel Barajas Gómez
-#### Lisseth Abigail Martínez Castillo
-#### Jonathan Medina Herrera
+#### Juan Manuel Barajas Gómez | Lisseth Abigail Martínez Castillo | Jonathan Medina Herrera
 
 El arte generativo es una forma de expresión artística en la que se utilizan sistemas o algoritmos computacionales para generar obras de arte. En lugar de ser creadas directamente por un artista humano, estas obras se generan a través de procesos automáticos o semi-automáticos, donde se establecen reglas, parámetros o algoritmos que determinan cómo se desarrolla la obra.
 

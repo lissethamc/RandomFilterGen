@@ -1,6 +1,4 @@
-# RandomFilterGen
-
-### randomfilterapp.sytes.net
+# [RandomFilterGen](randomfilterapp.sytes.net)
 
 #### Juan Manuel Barajas Gómez
 #### Lisseth Abigail Martínez Castillo
